@@ -45,3 +45,23 @@ ul{
   width: 100%;
   border: 1px solid black;
 }
+#cartItems{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+#item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+#quantity{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
