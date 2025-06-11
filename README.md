@@ -1,12 +1,74 @@
-# React + Vite
+# 🛍️ ShoppyGlobe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShoppyGlobe is a simple yet functional e-commerce frontend application built with **React**, featuring dynamic product listing, cart management, checkout, and performance optimizations like **lazy loading and code splitting**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 🧩 Core Functionalities
+- **Home Page** — Showcases welcome message or featured section.
+- **Product List** — Browse all available products.
+- **Filter by Category** — Dynamically filter products by category via URL.
+- **Product Details** — View detailed information about a specific product.
+- **Cart Page** — View added products, adjust quantities, remove items.
+- **Checkout Page** — Confirm order, enter address, and simulate purchase.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📦 State Management
+- Uses **Redux Toolkit** to manage product quantities, cart state, and checkout selections.
+
+### ⚡ Performance Optimizations
+- **Code Splitting** via `React.lazy()` and `Suspense`.
+- Lazy loading of routes like `ProductDetails`, `Cart`, `Checkout`, etc.
+
+### 🧪 Error Handling
+- Custom **NotFound** component for invalid routes.
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech         | Description                     |
+|--------------|----------------------------------|
+| React        | Frontend UI Library              |
+| Redux Toolkit| Global State Management          |
+| React Router | Routing & Navigation             |
+| CSS          | Basic styling                    |
+| Vite         | Fast dev server & bundling       |
+| DummyJSON API| (Optional) for real product data |
+
+---
+## 🧩 Installation & Running Locally
+
+### ⚙️ Prerequisites
+- Node.js (v18 or later)
+- npm or yarn
+
+### 🔧 Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/BeemariSrinivas/ShopifyGlobe.git
+   cd ShopifyGlobe
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. **Run the App**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open in Browser**
+   ```
+   http://localhost:5173
+   ```
+
+---
