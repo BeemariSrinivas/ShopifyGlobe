@@ -7,7 +7,7 @@
 ul{
   display: flex;
   justify-content: space-evenly;
-  padding: 3%;
+  padding: 0.5%;
   margin: 3%;
   border: 1px solid black;
 }
@@ -20,48 +20,360 @@ ul{
   padding: 3%;
 }
 
-#products > *{
-  border: 1px solid black;
-}
-
 .product{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3%;
+  border: 1px solid black;
 }
 
 #productList{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+#search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #category{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 60%;
   border: 1px solid black;
 }
-#cartItems{
+
+#Cart{
+  text-align: center;
+}
+
+#CartItems{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  gap: 10px;
+  background-color: aqua;
+  padding: 2%;
 }
 
-#item{
+.item{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.item>*{
+  margin: 10px;
 }
 
 #quantity{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 6%;
+  height: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+
+#cartItemDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60svh;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#emptycart{
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button{
+  margin: 3%;
+}
+
+#home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: medium;
+}
+
+#homeCategory{
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+  grid-template-columns: repeat(2,1fr);
+  gap:10px;
+  margin-bottom: 3%;
+}
+
+#homeCategory > *{
+  border: 1px solid black;
+  padding: 3%;
+}
+
+#productDetails{
+  text-align: center;
+}
+
+.mainDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stock{
+  text-align: start;
+}
+
+.productSpecifications{
+  text-align: start;
+}
+
+
+.product img{
+  height: 400px;
+  width: 400px;
+}
+
+.product_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.add_to_cart{
+  background-color: rgb(183, 183, 34);
+}
+
+.buy_now{
+  background-color: rgba(165, 42, 42, 0.466);
+}
+
+
+#Reviews{
+  display: flex;
+  text-align: left;
+  margin: 10px;
+  font-size: medium;
+  justify-content: space-between;
+}
+
+.review{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#notFound{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  text-align: center;
+}
+
+.quantity{
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  font-size: x-large;
+}
+
+
+#form{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+#SelectedItems{
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 6px;
+}
+
+#total{
+  text-align: center;
+}
+
+#checkoutButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #checkoutButtons > *{
+    font-size: xx-large;
+    background-color: blueviolet;
+    color: aliceblue;
+    padding: 6px;
+  }
+
+@media screen and (max-width:768px) {
+  #products{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  #category{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+    text-align: center;
+    font-size: large;
+  }
+  #quantity{
+    width: 30%;
+  }
+  #productDetails > *{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .product{
+    font-size: x-large;
+  }
+
+  .product img{
+    height: 200px;
+    width: 200px;
+  }
+  #Reviews{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    gap: 10px;
+  }
+
+  .review{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  #Checkout{
+    margin: 10px;
+  }
+
+  .selectedItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  #root{
+    font-size: smaller;
+  }
+
+  #homeCategory{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #products{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+  #category{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+    text-align: center;
+  }
+  .cartButton{
+   font-size: large;
+    background-color: blueviolet;
+    color: aliceblue; 
+  }
+  #CartItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+  }
+  .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    border: 1px solid black;
+    padding: 3%;
+  }
+  #quantity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 6%;
+    height: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  #productDetails > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+  }
+
+  .product{
+    font-size: large;
+  }
+
+  .product img{
+    height: 200px;
+    width: 200px;
+  }
+
+  #checkoutButtons > *{
+    font-size: large;
+    background-color: blueviolet;
+    color: aliceblue;
+    padding: 6px;
+  }
 }

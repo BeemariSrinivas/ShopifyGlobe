@@ -1,14 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import ProductList from './components/ProductList.jsx'
-import ProductDetails from './components/Product Detail.jsx'
-import Cart from './components/Cart.jsx'
-import CartItem from './components/CartItem.jsx'
-import NotFound from './components/NotFound.jsx'
-import Home from './components/Home.jsx'
+import { Provider } from 'react-redux'
+import appStore from '../utils/appStore.js'
+
+const App=lazy(()=>import('./App.jsx'));
+const ProductList = lazy(()=>import('./components/ProductList.jsx'));
+const ProductDetails = lazy(()=>import('./components/Product Detail.jsx'));
+const Cart = lazy(()=>import('./components/Cart.jsx'));
+const CartItem = lazy(()=>import('./components/CartItem.jsx'));
+const NotFound = lazy(()=>import('./components/NotFound.jsx'));
+const Home = lazy(()=>import('./components/Home.jsx'));
+const Checkout = lazy(()=>import('./components/Checkout.jsx'));
 
 const appRouter = createBrowserRouter([
   {
@@ -20,7 +25,7 @@ const appRouter = createBrowserRouter([
         element : <Home />
       },
       {
-        path : "/ProductList",
+        path : "/product",
         element : <ProductList />
       },
       {
@@ -35,13 +40,26 @@ const appRouter = createBrowserRouter([
         path : "/productDetails/:id",
         element : <ProductDetails />
       },
+      {
+        path : "/cart/:id",
+        element : <CartItem />
+      },
     ],
     errorElement : <NotFound/>
+  },
+  {
+    path : "/checkout",
+    element : <Checkout />,
+    errorElement : <NotFound/>,
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
- // <StrictMode>
-    <RouterProvider router={appRouter}></RouterProvider>
-  //</StrictMode>,
+ <StrictMode>
+    <Provider store={appStore}>
+      <Suspense fallback={<div>Loading.......</div>}>
+        <RouterProvider router={appRouter}></RouterProvider>
+      </Suspense>
+    </Provider>
+  </StrictMode>,
 )
